@@ -5,7 +5,9 @@
 #include <stdio.h>
 #include "Nodes.h"
 
-int ReadInputFile(char string[])
+
+
+int ReadInputFile(char string[], node_list **nList)
 {
     if (string==NULL)
     {
@@ -14,8 +16,11 @@ int ReadInputFile(char string[])
     }
     FILE  * fpointer= NULL;
     char *temp =string;
-    printf("%s\n",temp);
+    printf("%s",temp);
+    char firstLine[255];
     char line[255];
+    char *tokenFirst;
+    char *token;
     fpointer = fopen(temp,"r");
 
     if (fpointer==NULL)
@@ -24,7 +29,42 @@ int ReadInputFile(char string[])
         printf("Invalid vertex file.\n");
         return 1;
     }
-    fgets(line,255, fpointer);
-    printf("%s", line);
+    char delimit[]=",";
+    /*
+    fgets(firstLine, sizeof(line), fpointer);
+    printf("První radek %s", firstLine);
+    tokenFirst = strtok(firstLine,delimit);
+
+    if(strcmp(tokenFirst,"id")){
+        printf("seper\n");
+    }
+     tokenFirst = strtok( NULL,"");
+     */
+    while (fpointer!=NULL)
+    {
+    fgets(line, sizeof(line), fpointer);
+    //printf("%s", line);
+    token = strtok(line,delimit);
+
+
+        for (int i = 0; i < strlen(token); ++i)
+        {
+            if(token!=NULL){
+            printf("%s", token);
+            token = strtok( NULL,"");
+            }
+        }
+
+       /* while (token!=NULL){
+            printf("%s\n", token);
+            token = strtok( NULL,"");
+        }*/
+
+        if( feof(fpointer) )
+        {
+            break ;
+        }
+    }
+    fclose(fpointer);
     return 0;
 }

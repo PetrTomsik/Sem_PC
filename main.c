@@ -4,9 +4,6 @@
 #include "Nodes.h"
 #include "Edges.h"
 
-void readNodes(char *string);
-
-void readEdges(char *string);
 
 int main(int argc , char *argv[])
 {
@@ -54,11 +51,15 @@ int main(int argc , char *argv[])
      * isvalid s hodnotou True.
      */
     char tempSwich[] ="-a";
-    int mistake = 0;
+
     /**
-     * muzu mit
-     * . Zaručte,aby načtení uzlů grafu bylo vždy první operací
+     * Pomocná pro návratovou hodnotu
      */
+    int mistake ;
+
+    node_list *lostOfNodes = NULL;
+
+
     for (int i = 0; i < argc; ++i)
     {
         char *temp = argv[i];
@@ -78,7 +79,7 @@ int main(int argc , char *argv[])
        else if(!strcmp(temp,tempNodes))
        {
            printf("%s\n",argv[i+1]);
-           mistake = ReadInputFile(argv[i+1]);
+           mistake = ReadInputFile(argv[i + 1], &lostOfNodes);
            if (mistake!=0)
            {
                return mistake;
@@ -96,14 +97,6 @@ int main(int argc , char *argv[])
     return 0;
 }
 
-void readEdges(char string[]) {
-    char *temp =string;
-    printf("%s\n",temp);
-    char line[255];
-    FILE  * fpointer = fopen(temp,"r");
 
-    fgets(line,255, fpointer);
-    printf("%s", line);
-}
 
 
