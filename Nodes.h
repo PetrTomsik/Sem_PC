@@ -1,5 +1,5 @@
 typedef struct _nodes{
-    char id[50];
+    int id;
     char WKT[50];
 }nodes;
 
@@ -9,3 +9,5 @@ typedef struct _node_list {
 } node_list;
 
 int ReadInputFile(char string[], node_list **pList);
+
+void nodeAdd(node_list **pList, int id, char wkt[255]);

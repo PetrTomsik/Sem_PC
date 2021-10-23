@@ -3,9 +3,11 @@
 //
 #include <string.h>
 #include <stdio.h>
+#include <malloc.h>
 #include "Nodes.h"
 
 
+void nodeAdd(node_list **pList, int id, char wkt[255]);
 
 int ReadInputFile(char string[], node_list **nList)
 {
@@ -14,6 +16,8 @@ int ReadInputFile(char string[], node_list **nList)
         printf("Invalid vertex file.\n");
         return 1;
     }
+    int id;
+    char *wkt;
     FILE  * fpointer= NULL;
     char *temp =string;
     printf("%s",temp);
@@ -51,15 +55,17 @@ int ReadInputFile(char string[], node_list **nList)
 
         for (int i = 0; i < lenght; ++i)
         {
-            if(IdOrWkt==0){
-
+            if(IdOrWkt==i){
+                id=(int)token;
+            }else{
+                wkt=token;
             }
             if(token!=NULL){
             printf("%s\n", token);
             token = strtok( NULL,"");
             }
         }
-
+        nodeAdd(nList,id,wkt);
        /* while (token!=NULL){
             printf("%s\n", token);
             token = strtok( NULL,"");
@@ -72,4 +78,29 @@ int ReadInputFile(char string[], node_list **nList)
     }
     fclose(fpointer);
     return 0;
+}
+
+
+/**
+ * Zkontrolovat pointry
+ * @param pList
+ * @param id
+ * @param wkt
+ */
+void nodeAdd(node_list **pList, int id, char *wkt) {
+    node_list *temp;
+
+    if (!pList || !id || !wkt)    /* Tady nesmí být !*list. V mainu jej máš na NULL sám nastaven! */
+       printf("Mistake");
+
+    temp = (node_list *)malloc(sizeof(node_list));
+    if (!temp)
+        printf("Mistake");
+
+    temp->data.id = id;
+    strncpy(temp->data.WKT, wkt, 255);
+
+    temp->next = *pList;
+    *pList = temp;
+
 }
