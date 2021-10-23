@@ -7,7 +7,11 @@
 
 int ReadInputFile(char string[])
 {
-
+    if (string==NULL)
+    {
+        printf("Invalid vertex file.\n");
+        return 1;
+    }
     FILE  * fpointer= NULL;
     char *temp =string;
     printf("%s\n",temp);
@@ -18,7 +22,7 @@ int ReadInputFile(char string[])
     {
         fclose(fpointer);
         printf("Invalid vertex file.\n");
-        return -1;
+        return 1;
     }
     fgets(line,255, fpointer);
     printf("%s", line);
