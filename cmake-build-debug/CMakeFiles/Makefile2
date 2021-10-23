@@ -93,12 +93,12 @@ clean: CMakeFiles/MaximalniTok.dir/clean
 CMakeFiles/MaximalniTok.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Petr Tomsik\Desktop\Peta\C\MaximalniTok\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target MaximalniTok"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Petr Tomsik\Desktop\Peta\C\MaximalniTok\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4 "Built target MaximalniTok"
 .PHONY : CMakeFiles/MaximalniTok.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MaximalniTok.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Petr Tomsik\Desktop\Peta\C\MaximalniTok\cmake-build-debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Petr Tomsik\Desktop\Peta\C\MaximalniTok\cmake-build-debug\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MaximalniTok.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Petr Tomsik\Desktop\Peta\C\MaximalniTok\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/MaximalniTok.dir/rule

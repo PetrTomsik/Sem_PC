@@ -3,4 +3,4 @@ project(MaximalniTok C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(MaximalniTok main.c)
+add_executable(MaximalniTok main.c Nodes.c Edges.c)

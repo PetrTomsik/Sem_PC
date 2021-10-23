@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.c" "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/cmake-build-debug/CMakeFiles/MaximalniTok.dir/Edges.c.obj"
+  "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.c" "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/cmake-build-debug/CMakeFiles/MaximalniTok.dir/Nodes.c.obj"
   "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/main.c" "C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/cmake-build-debug/CMakeFiles/MaximalniTok.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

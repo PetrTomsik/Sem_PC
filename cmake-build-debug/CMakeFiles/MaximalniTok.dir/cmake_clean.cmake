@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MaximalniTok.dir/Edges.c.obj"
+  "CMakeFiles/MaximalniTok.dir/Nodes.c.obj"
   "CMakeFiles/MaximalniTok.dir/main.c.obj"
   "MaximalniTok.exe"
   "MaximalniTok.exe.manifest"

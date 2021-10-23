@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/main.c
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.c
 string.h
 -
 stdio.h
 -
+Nodes.h
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.h
+
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.h
 

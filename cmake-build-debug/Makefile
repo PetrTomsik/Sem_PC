@@ -142,6 +142,60 @@ MaximalniTok/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/build
 .PHONY : MaximalniTok/fast
 
+Edges.obj: Edges.c.obj
+
+.PHONY : Edges.obj
+
+# target to build an object file
+Edges.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Edges.c.obj
+.PHONY : Edges.c.obj
+
+Edges.i: Edges.c.i
+
+.PHONY : Edges.i
+
+# target to preprocess a source file
+Edges.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Edges.c.i
+.PHONY : Edges.c.i
+
+Edges.s: Edges.c.s
+
+.PHONY : Edges.s
+
+# target to generate assembly for a file
+Edges.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Edges.c.s
+.PHONY : Edges.c.s
+
+Nodes.obj: Nodes.c.obj
+
+.PHONY : Nodes.obj
+
+# target to build an object file
+Nodes.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Nodes.c.obj
+.PHONY : Nodes.c.obj
+
+Nodes.i: Nodes.c.i
+
+.PHONY : Nodes.i
+
+# target to preprocess a source file
+Nodes.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Nodes.c.i
+.PHONY : Nodes.c.i
+
+Nodes.s: Nodes.c.s
+
+.PHONY : Nodes.s
+
+# target to generate assembly for a file
+Nodes.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MaximalniTok.dir\build.make CMakeFiles/MaximalniTok.dir/Nodes.c.s
+.PHONY : Nodes.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -178,6 +232,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MaximalniTok
+	@echo ... Edges.obj
+	@echo ... Edges.i
+	@echo ... Edges.s
+	@echo ... Nodes.obj
+	@echo ... Nodes.i
+	@echo ... Nodes.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

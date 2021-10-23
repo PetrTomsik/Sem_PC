@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.c">
+			<Option target="MaximalniTok"/>
+		</Unit>
+		<Unit filename="C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.c">
+			<Option target="MaximalniTok"/>
+		</Unit>
 		<Unit filename="C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/main.c">
 			<Option target="MaximalniTok"/>
 		</Unit>
