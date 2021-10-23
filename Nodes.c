@@ -30,16 +30,18 @@ int ReadInputFile(char string[], node_list **nList)
         return 1;
     }
     char delimit[]=",";
-    /*
+    int lenght= strlen(token);
+    int IdOrWkt=1;
+
     fgets(firstLine, sizeof(line), fpointer);
     printf("První radek %s", firstLine);
     tokenFirst = strtok(firstLine,delimit);
 
     if(strcmp(tokenFirst,"id")){
         printf("seper\n");
+        IdOrWkt=0;
     }
      tokenFirst = strtok( NULL,"");
-     */
     while (fpointer!=NULL)
     {
     fgets(line, sizeof(line), fpointer);
@@ -47,10 +49,13 @@ int ReadInputFile(char string[], node_list **nList)
     token = strtok(line,delimit);
 
 
-        for (int i = 0; i < strlen(token); ++i)
+        for (int i = 0; i < lenght; ++i)
         {
+            if(IdOrWkt==0){
+
+            }
             if(token!=NULL){
-            printf("%s", token);
+            printf("%s\n", token);
             token = strtok( NULL,"");
             }
         }
