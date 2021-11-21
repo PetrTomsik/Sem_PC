@@ -7,100 +7,88 @@
 #include "Nodes.h"
 
 
-void nodeAdd(node_list **pList, int id, char wkt[255]);
 
-int ReadInputFile(char string[], node_list **nList)
-{
-    if (string==NULL)
+int* ReadInputFile(char path[], node_list **nList) {
+    if (path == NULL)
     {
         printf("Invalid vertex file.\n");
-        return 1;
+      //  return 1;
     }
-    int id;
-    char *wkt;
-    FILE  * fpointer= NULL;
-    char *temp =string;
-    printf("%s",temp);
-    char firstLine[255];
+    FILE *fpointer = NULL;
+    char *temp = path;
     char line[255];
-    char *tokenFirst;
     char *token;
-    fpointer = fopen(temp,"r");
+    int lenght;
+    int *ptr;
+    int count = 5;
+    /**
+    * cti ze souboru
+    */
+    fpointer = fopen(temp, "r");
 
-    if (fpointer==NULL)
-    {
+    if (fpointer == NULL) {
         fclose(fpointer);
         printf("Invalid vertex file.\n");
-        return 1;
+       // return 1;
     }
-    char delimit[]=",";
-    int lenght= strlen(token);
-    int IdOrWkt=1;
+    char delimit[] = ",";
 
-    fgets(firstLine, sizeof(line), fpointer);
-    printf("První radek %s", firstLine);
-    tokenFirst = strtok(firstLine,delimit);
-
-    if(strcmp(tokenFirst,"id")){
-        printf("seper\n");
-        IdOrWkt=0;
+    ptr = (int *) calloc(count, sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
     }
-     tokenFirst = strtok( NULL,"");
-    while (fpointer!=NULL)
+
+    int aktualniDelka = count;
+
+    while (fpointer != NULL) {
+        printf("radka %s\n", line);
+        fgets(line, sizeof(line), fpointer);
+        /**
+         * Odstraneni prvni radky
+         */
+        if (strstr(line, "WKT") != NULL) {
+            continue;
+        }
+        token = strtok(line, delimit);
+        /**
+         * na kolik casti se ma rozdelit radka
+         */
+        int temp;
+        /**
+         * pouziti je pouze pro prvni token
+         */
+        if (token !=NULL) {
+            /**
+             * prevede na cislicovou hodnotu
+             */
+            temp = atoi(token);
+            if (aktualniDelka < temp)
+            {
+                ptr = realloc(ptr, (temp+1)*(sizeof (int )));
+                for (int (i) = aktualniDelka; i <=  temp; ++(i)) {
+                    ptr[i]=0;
+                }
+                aktualniDelka = temp+1;
+                ptr[temp] = temp;
+            } else {
+                ptr[temp] = temp;
+            }
+        }
+
+
+        if (feof(fpointer)) {
+            break;
+        }
+        memset(line,0,sizeof (line));
+    }
+   /** for (int i = 0; i < 51; i++)
     {
-    fgets(line, sizeof(line), fpointer);
-    //printf("%s", line);
-    token = strtok(line,delimit);
+        printf("%d Delka v poli %d\n", i,ptr[i]);
+    }*/
 
-
-        for (int i = 0; i < lenght; ++i)
-        {
-            if(IdOrWkt==i){
-                id=(int)token;
-            }else{
-                wkt=token;
-            }
-            if(token!=NULL){
-            printf("%s\n", token);
-            token = strtok( NULL,"");
-            }
-        }
-        nodeAdd(nList,id,wkt);
-       /* while (token!=NULL){
-            printf("%s\n", token);
-            token = strtok( NULL,"");
-        }*/
-
-        if( feof(fpointer) )
-        {
-            break ;
-        }
-    }
     fclose(fpointer);
-    return 0;
+    return ptr;
 }
 
 
-/**
- * Zkontrolovat pointry
- * @param pList
- * @param id
- * @param wkt
- */
-void nodeAdd(node_list **pList, int id, char *wkt) {
-    node_list *temp;
-
-    if (!pList || !id || !wkt)    /* Tady nesmí být !*list. V mainu jej máš na NULL sám nastaven! */
-       printf("Mistake");
-
-    temp = (node_list *)malloc(sizeof(node_list));
-    if (!temp)
-        printf("Mistake");
-
-    temp->data.id = id;
-    strncpy(temp->data.WKT, wkt, 255);
-
-    temp->next = *pList;
-    *pList = temp;
-
-}

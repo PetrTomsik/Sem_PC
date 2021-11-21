@@ -5,6 +5,8 @@
 #include "Edges.h"
 
 
+void vypis(int *pInt);
+
 int main(int argc , char *argv[])
 {
     /**
@@ -55,7 +57,7 @@ int main(int argc , char *argv[])
     /**
      * Pomocná pro návratovou hodnotu
      */
-    int mistake ;
+    int* nodes ;
 
     node_list *lostOfNodes = NULL;
 
@@ -75,16 +77,17 @@ int main(int argc , char *argv[])
        else if(!strcmp(temp,tempEdges))
        {
            printf("%s\n",argv[i+1]);
+           ReadInputFileEdges(argv[i + 1], &lostOfNodes);
+
+
        }
        else if(!strcmp(temp,tempNodes))
        {
            printf("%s\n",argv[i+1]);
-           mistake = ReadInputFile(argv[i + 1], &lostOfNodes);
-           if (mistake!=0)
-           {
-               return mistake;
-           }
-
+           nodes = ReadInputFile(argv[i + 1], &lostOfNodes);
+           printf("-------------------------------------------------------------");
+           vypis(nodes);
+           printf("-------------------------------------------------------------");
        }
        else if(!strcmp(temp,tempSwich))
        {
@@ -92,9 +95,15 @@ int main(int argc , char *argv[])
        }
     }
 
-
-    printf("Hello, World!\n");
     return 0;
+}
+
+void vypis(int *pInt) {
+    for (int i = 0; i < 51; i++)
+    {
+        printf("%d Delka v poli %d\n", i,pInt[i]);
+    }
+
 }
 
 

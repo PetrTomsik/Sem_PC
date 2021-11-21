@@ -8,6 +8,6 @@ typedef struct _node_list {
     struct _person_list_node *next;
 } node_list;
 
-int ReadInputFile(char string[], node_list **pList);
+int* ReadInputFile(char path[], node_list **pList);
 
-void nodeAdd(node_list **pList, int id, char wkt[255]);
+void nodeAdd(node_list **pList,const int id,const char wkt[255]);
