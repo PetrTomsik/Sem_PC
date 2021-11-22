@@ -16,6 +16,6 @@ typedef struct _edges_list {
 
 void ReadInputFileEdges(char path[], edge_list **pList);
 
-int personll_add(edge_list **pList, int i, int i1, int i2, int i3, int i4, char *string);
+int personll_add(edge_list ***pList, int i, int i1, int i2, int i3, int i4, char *string);
 
-void personll_print(const edge_list *list);
+void personll_print( edge_list ***list);

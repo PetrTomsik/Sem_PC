@@ -6,6 +6,7 @@
 
 
 void vypis(int *pInt);
+void personl_print( edge_list **list);
 
 int main(int argc , char *argv[])
 {
@@ -58,6 +59,7 @@ int main(int argc , char *argv[])
      * Pomocná pro návratovou hodnotu
      */
     int* nodes ;
+    edge_list *head = NULL;
 
     node_list *lostOfNodes = NULL;
 
@@ -77,16 +79,18 @@ int main(int argc , char *argv[])
        else if(!strcmp(temp,tempEdges))
        {
            printf("%s\n",argv[i+1]);
-           ReadInputFileEdges(argv[i + 1], &lostOfNodes);
-
-
+           printf(" pamet %d",&head);
+           ReadInputFileEdges(argv[i + 1], &head);
+           printf("-------------------------------------------------------------");
+          // personl_print(&head);
+           printf("-------------------------------------------------------------");
        }
        else if(!strcmp(temp,tempNodes))
        {
            printf("%s\n",argv[i+1]);
            nodes = ReadInputFile(argv[i + 1], &lostOfNodes);
-           printf("-------------------------------------------------------------");
-           vypis(nodes);
+           printf("-------------------------------------------------------------\n");
+          // vypis(nodes);
            printf("-------------------------------------------------------------");
        }
        else if(!strcmp(temp,tempSwich))
@@ -106,6 +110,14 @@ void vypis(int *pInt) {
 
 }
 
-
+/*
+void personl_print( edge_list **list)
+{
+    while (*list != NULL)
+    {
+        printf("id: %d source: %d target: %d capacity: %d isvalid: %d WKT %s \n",(*list)->data.id,(*list)->data.source,(*list)->data.target,(*list)->data.capacity,(*list)->data.isvalid,(*list)->data.WKT);
+        *list = (*list)->next;
+    }
+}*/
 
 
