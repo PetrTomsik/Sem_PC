@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.c
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.h
+stdbool.h
+-
+
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.h
+
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/main.c
 string.h
 -
 stdio.h
 -
-malloc.h
--
+Nodes.h
+C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Nodes.h
 Edges.h
 C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.h
-
-C:/Users/Petr Tomsik/Desktop/Peta/C/MaximalniTok/Edges.h
-stdbool.h
--
 

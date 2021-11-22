@@ -3,6 +3,7 @@
 
 #include "Nodes.h"
 #include "Edges.h"
+#include "Martix.h"
 
 
 void vypis(int *pInt);
@@ -98,6 +99,9 @@ int main(int argc , char *argv[])
            printf("%s\n",argv[i+1]);
        }
     }
+
+
+
 
     return 0;
 }
